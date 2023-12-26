@@ -2,7 +2,6 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class App {
-    App app = new App();
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost/minimarket";
     static final String USER = "root";
@@ -156,7 +155,6 @@ public class App {
     static void updateData() {
         try {
             
-            // ambil input dari user
             System.out.print("Faktur yang mau diedit : ");
             String no_faktur = scanner.nextLine();
             System.out.print("Nama Pelanggan : ");
@@ -166,11 +164,9 @@ public class App {
             System.out.print("Alamat : ");
             String alamat = scanner.nextLine().trim();
 
-            // query update
             String sql = "UPDATE pelanggan SET nama='%s', no_hp='%s', alamat='%s' WHERE no_faktur='%s'";
             sql = String.format(sql, nama, no_hp, alamat, no_faktur);
 
-            // update data Data
             stmt.execute(sql);
             
         } catch (Exception e) {
