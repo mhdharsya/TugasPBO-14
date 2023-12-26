@@ -88,6 +88,7 @@ public class App {
         } finally {
             System.out.println("Kasir : " + kasir.getUsernameBenar());
         }
+        scanner.close();
     } 
     
     static Scanner scanner = new Scanner(System.in); 
